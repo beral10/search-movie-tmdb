@@ -1,3 +1,4 @@
+
 import clsx from 'clsx';
 import React from 'react';
 
@@ -12,3 +13,5 @@ const MenuNavbar = ({ setToggleMenu, toggleMenu }) => {
 };
 
 export default MenuNavbar;
+
+

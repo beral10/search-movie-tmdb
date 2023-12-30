@@ -1,6 +1,5 @@
 'use client';
 import MenuNavbar from '@/ui/menuNavbar';
-import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -25,6 +24,7 @@ const Navbar = () => {
 
 	return (
 		<div className='max-w-screen-2xl m-auto px-10 relative'>
+			
 			{/* Desktop menu */}
 
 			<div className='flex justify-between items-center py-6'>
@@ -34,7 +34,7 @@ const Navbar = () => {
 				<MenuNavbar setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
 				<ul className='hidden sm:flex justify-between items-center gap-4'>
 					{links.map((link) => (
-						<li key={link.name} className='pl-4'>
+						<li key={link.name}>
 							<Link href={link.link}>{link.name}</Link>
 						</li>
 					))}

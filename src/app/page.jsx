@@ -14,10 +14,10 @@ export default function Home() {
   const type = movieSearch ? 'search' : 'discover';
   const filter = movieSearch ? `query=${movieSearch}` : 'sort_by=popularity.desc';
 
-  // const params = useSearchParams()
-  // const searchUrl = params.get('search');
-  // console.log(params);
-  // console.log(searchUrl);
+  const params = useSearchParams()
+  const searchUrl = params.get('search');
+  console.log(params);
+  console.log(searchUrl);
 
   const getMovies = () => {
     const options = {
@@ -39,8 +39,7 @@ export default function Home() {
   }, []);
 
   const handleSearchMovies = () => {
-    getMovies();
-    setMovieSearch('');
+    getMovies()
   };
   
   console.log(movieList);
@@ -75,7 +74,7 @@ export default function Home() {
         {
           movieList.map( (movie) => (            
             <div key={movie.id} className="p-3 cursor-pointer flex flex-col justify-between items-center">
-              <Link href={`/details/${movie.id}?title=${movie.original_title}`}>
+              <Link href={`/details/${movie.id}`}>
                 <Image src={`${URL_IMAGE + movie.poster_path}`} alt={movie.original_title} width={300} height={300} />
                 <h2 className="text-gray-900 font-semibold text-center">{movie.original_title} </h2>
                 <p className='text-gray-900 text-center'>{movie.release_date}</p>
