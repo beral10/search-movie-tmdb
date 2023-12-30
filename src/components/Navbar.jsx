@@ -26,14 +26,15 @@ const Navbar = () => {
 	return (
 		<div className='max-w-screen-2xl m-auto px-10 relative'>
 			{/* Desktop menu */}
+
 			<div className='flex justify-between items-center py-6'>
 				<Link href={'/'}>
 					<Image src='/logos/logo_navbar.svg' alt='logo' width={150} height={100} />
 				</Link>
-				<MenuNavbar settogglemenu={setToggleMenu} togglemenu={toggleMenu} />
+				<MenuNavbar setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
 				<ul className='hidden sm:flex justify-between items-center gap-4'>
 					{links.map((link) => (
-						<li key={link.name}>
+						<li key={link.name} className='pl-4'>
 							<Link href={link.link}>{link.name}</Link>
 						</li>
 					))}
@@ -43,10 +44,10 @@ const Navbar = () => {
 			{/* Mobile menu */}
 
 			{toggleMenu && (
-				<div className='fixed left-0 top-0 bg-[#0d253f] w-full h-full z-20 flex flex-col justify-center items-center sm:hidden'>
+				<div className='fixed left-0 top-0 bg-[#0d253f] w-full h-screen flex flex-col justify-center items-center sm:hidden'>
 					<div className={toggleMenu ? 'absolute right-10 top-7' : ''}>
-            <MenuNavbar settogglemenu={setToggleMenu} togglemenu={toggleMenu} />
-          </div>
+						<MenuNavbar setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
+					</div>
 					<ul className='flex flex-col justify-between items-center gap-6'>
 						{links.map((link) => (
 							<li key={link.name} onClick={() => setToggleMenu(false)} className='text-xl text-[#90cea1] font-semibold'>

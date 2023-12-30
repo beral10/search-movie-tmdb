@@ -75,7 +75,7 @@ const Details = ({ params }) => {
 	return (
 		<div className={`text-black max-w-screen-2xl m-auto py-10`}>
 			{movie ? (
-				<div className={clsx(playing ? '' : `p-2 sm:p-5 md:p-10`)} style={{ backgroundImage: `url("${URL_IMAGE}${movie.backdrop_path}")`, backgroundSize: 'cover', backgroundPosition: 'center', height: '600px' }}>
+				<div className={clsx(playing ? '' : `p-2 sm:p-5 md:p-10`)} style={{ backgroundImage: `url("${URL_IMAGE}${movie.backdrop_path}")`, backgroundSize: 'cover', backgroundPosition: 'center', height: '650px' }}>
 					<div className='text-white flex flex-col items-center justify-between h-full w-full pt-10 lg:px-20 relative'>
 						<h2 className='text-4xl font-bold mb-5 contour'>{movie.original_title}</h2>
 						{playing ? (
