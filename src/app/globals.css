@@ -10,3 +10,16 @@
 .contour-title-favorites {
   text-shadow: 0 0 4px #d63810;
 }
+
+.contenedor_search {
+  @apply max-w-screen-2xl h-auto m-auto pt-6 px-6 md:px-10
+}
+.contenedor_search::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); 
+}

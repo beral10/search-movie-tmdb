@@ -19,7 +19,7 @@ const Favorites = () => {
   };
 
   return (
-    <div className='text-black max-w-screen-2xl m-auto pt-6 md:pt-14 px-3 sm:px-6 md:p-10 shadow-2xl shadow-zinc-600'>
+    <div className='text-black max-w-screen-2xl m-auto py-6 md:pt-14 px-3 sm:px-6 md:p-10 shadow-2xl shadow-zinc-600'>
       {
         moviesFavorites.length === 0 ? (
           <div className='flex justify-center items-center'>
