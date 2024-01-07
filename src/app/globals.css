@@ -23,3 +23,12 @@
   height: 100%;
   background-color: rgba(255, 0, 0, 0.5); 
 }
+
+.boxParentGenre {
+  @apply flex flex-wrap gap-3 pb-5
+};
+
+/* .boxParentGenre:last-Child {
+  background-color: #d63810;
+  color: aquamarine;
+} */

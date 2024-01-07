@@ -46,7 +46,7 @@ export default function Home() {
 
 	useEffect(() => {
 		getMovies();
-	}, [movieSearch, currentPage, filterGenre]);
+	}, [filterGenre, movieSearch, currentPage]);
 
 	const handleSearchMovies = (movie) => {
 		setMovieSearch(movie);

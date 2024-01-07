@@ -80,6 +80,10 @@ const FilterMovieByGenre = ({ setMovieList, setFilterGenre }) => {
 			id: 37,
 			name: 'Western',
 		},
+		{
+			id: null,
+			name: 'All'
+		}
 	];
 
 	const handleFilterGenres = (genreId) => {
@@ -87,11 +91,11 @@ const FilterMovieByGenre = ({ setMovieList, setFilterGenre }) => {
 	};
 
 	return (
-		<div>
-			<h3>Discover your movies by genre:</h3>
-			<div className='flex flex-wrap gap-3'>
+		<div className='flex flex-col gap-3'>
+			<h3 className='font-semibold md:text-xl'>Discover your movies by genre:</h3>
+			<div className='boxParentGenre'>
 				{genres.map((genre) => (
-					<div key={genre.id} className='border-2 border-slate-600 rounded-md px-2 py-1 cursor-pointer hover:bg-slate-400 active:bg-[#90cea1]' onClick={() => handleFilterGenres(genre.id)}>
+					<div key={genre.id} className='border-2 border-slate-600 rounded-md px-2 py-1 cursor-pointer hover:bg-slate-400' onClick={() => handleFilterGenres(genre.id)}>
 						{genre.name}
 					</div>
 				))}
