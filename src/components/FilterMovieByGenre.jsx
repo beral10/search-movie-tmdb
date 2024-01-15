@@ -1,7 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-const FilterMovieByGenre = ({ setMovieList, setFilterGenre }) => {
+const FilterMovieByGenre = ({ setFilterGenre }) => {
+	const [selectValue, setSelectValue] = useState('');
 
 	const genres = [
 		{
@@ -82,23 +83,41 @@ const FilterMovieByGenre = ({ setMovieList, setFilterGenre }) => {
 		},
 		{
 			id: null,
-			name: 'All'
-		}
+			name: 'All',
+		},
 	];
 
 	const handleFilterGenres = (genreId) => {
 		setFilterGenre(genreId);
 	};
 
+	const handleSelectChange = (event) => {
+		const selectedOption = event.target.selectedOptions[0];
+		const valueId = Number(selectedOption.getAttribute('valueid'));
+		setSelectValue(event.target.value);
+		setFilterGenre(valueId);
+	};
+
 	return (
 		<div className='flex flex-col gap-3'>
-			<h3 className='font-semibold md:text-xl'>Discover your movies by genre:</h3>
+			<h3 className='font-semibold text-lg md:text-xl'>Discover your movies by genre:</h3>
 			<div className='boxParentGenre'>
 				{genres.map((genre) => (
 					<div key={genre.id} className='border-2 border-slate-600 rounded-md px-2 py-1 cursor-pointer hover:bg-slate-400' onClick={() => handleFilterGenres(genre.id)}>
 						{genre.name}
 					</div>
 				))}
+			</div>
+			<div className='flex justify-between md:hidden pb-4'>
+				<label htmlFor='selectOption'>Select an option:</label>
+				<select id='selectOption' value={selectValue} onChange={handleSelectChange} className='text-black w-40'>
+					<option value=''>Choose...</option>
+					{genres.map((genre) => (
+						<option key={genre.id} value={genre.name} valueid={genre.id}>
+							{genre.name}
+						</option>
+					))}
+				</select>
 			</div>
 		</div>
 	);

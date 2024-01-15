@@ -13,7 +13,7 @@ const SearchMovieForm = (props) => {
   
 
   return (
-    <form className='flex flex-col sm:flex-row justify-center items-end gap-2 lg:gap-6 py-10 w-full'>
+    <form className='flex flex-col sm:flex-row justify-center items-end gap-2 lg:gap-6 py-4 md:py-10 w-full'>
     <div className='flex flex-col gap-1 text-black w-full sm:w-1/2'>
       <label htmlFor='title' className='font-semibold hidden sm:flex text-white'>
         Search movie title:

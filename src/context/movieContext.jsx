@@ -13,7 +13,6 @@ export const useMovies = () => {
 //Este provider devuelve una especie de comp que contendrá a otros.
 export const MovieProvider = ({ children }) => {
 	const [moviesFavorites, setMoviesFavorites] = useState([]);
-	console.log(moviesFavorites);
 
 	return <MovieContext.Provider value={{ moviesFavorites, setMoviesFavorites }}>{children}</MovieContext.Provider>;
 };
