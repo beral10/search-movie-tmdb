@@ -2,6 +2,7 @@
 import { ClassNames } from '@emotion/react';
 import { clsx } from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 const TrendingMovies = () => {
@@ -49,13 +50,15 @@ const TrendingMovies = () => {
 			<div className='flex overflow-x-auto overscroll-x-contain snap-x snap-proximity'>
 				{moviesTrending?.map((trend) => (
 					<div key={trend.id} className='relative mx-1 md:mx-3 cursor-pointer text-xs'>
-						<div className='w-16 md:w-24'>
-							<Image src={`${URL_IMAGE}${trend.poster_path}`} alt='imagen' width={90} height={90} className='rounded-xl' />
-						</div>
-						<div className='relative w-full flex flex-col items-start pt-5'>
-							<div className='absolute right-1 md:right-2 -top-5 flex justify-center items-center rounded-full bg-gray-600 text-white md:text-sm w-8 md:w-10 h-8 md:h-10'>{trend.vote_average.toFixed(1)}%</div>
-							<h3 className='font-semibold md:text-sm'>{trend.original_name || trend.title}</h3>
-						</div>
+						<Link href={`/details/${trend.id}`}>
+							<div className='w-16 md:w-24'>
+								<Image src={`${URL_IMAGE}${trend.poster_path}`} alt='imagen' width={90} height={90} className='rounded-xl' />
+							</div>
+							<div className='relative w-full flex flex-col items-start pt-5'>
+								<div className='absolute right-1 md:right-2 -top-5 flex justify-center items-center rounded-full bg-gray-600 text-white md:text-sm w-8 md:w-10 h-8 md:h-10'>{trend.vote_average.toFixed(1)}%</div>
+								<h3 className='font-semibold md:text-sm'>{trend.original_name || trend.title}</h3>
+							</div>
+						</Link>
 					</div>
 				))}
 			</div>

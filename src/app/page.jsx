@@ -22,6 +22,8 @@ export default function Home() {
 	const filter = movieSearch ? `query=${movieSearch}` : filterGenre ? `with_genres=${filterGenre}`: 'sort_by=popularity.desc';
 	const page = `page=${currentPage}`;
 	let totalPages = data.total_pages;
+	const maxPagesToShow = 100;
+	totalPages = Math.min(totalPages, maxPagesToShow); //Esto asegura que el total de paginación NO sea >100
 
 	const params = useSearchParams();
 	// const searchUrl = params.get('search');

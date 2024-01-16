@@ -23,7 +23,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<div className='max-w-screen-2xl m-auto px-10 relative z-10'>
+		<div className='max-w-screen-2xl m-auto px-10 relative z-20'>
 			
 			{/* Desktop menu */}
 
