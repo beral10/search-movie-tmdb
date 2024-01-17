@@ -23,7 +23,7 @@ export default function Home() {
 	const page = `page=${currentPage}`;
 	let totalPages = data.total_pages;
 	const maxPagesToShow = 100;
-	totalPages = Math.min(totalPages, maxPagesToShow); //Esto asegura que el total de paginación NO sea >100
+	totalPages = totalPages < maxPagesToShow ? totalPages : maxPagesToShow; //Esto asegura que el total de paginación NO sea >100
 
 	const params = useSearchParams();
 	// const searchUrl = params.get('search');

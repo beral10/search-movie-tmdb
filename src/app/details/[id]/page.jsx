@@ -20,8 +20,8 @@ const Details = ({ params }) => {
 	const [trailer, setTrailer] = useState(null);
 	const [playing, setPlaying] = useState(false);
 
-	console.log(movie);
-	console.log(trailer);
+	// console.log(movie);
+	// console.log(trailer);
 
 	const getMovie = () => {
 		const options = {
@@ -98,7 +98,7 @@ const Details = ({ params }) => {
 									</button>
 								</div>
 							</div>
-							<div className='flex flex-col gap-2 text-slate-300'>
+							<div className='flex flex-col gap-2 text-slate-200 contour'>
 								<p className='text-justify'>{movie.overview}</p>
 								<p className='flex gap-3'>
 									<span>Genres: </span>
