@@ -9,7 +9,7 @@ const Favorites = () => {
 
   const {moviesFavorites, setMoviesFavorites} = useMovies();
   const {push} = useRouter();
-  console.log(moviesFavorites);
+  //console.log(moviesFavorites);
 
   const URL_IMAGE = 'https://image.tmdb.org/t/p/original';
 

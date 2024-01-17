@@ -55,7 +55,7 @@ const Details = ({ params }) => {
 				console.warn('Película ya exite');
 			} else {
 				setMoviesFavorites((prevMovie) => [...prevMovie, movieSelect]);
-				console.log('Película agregada con éxito.');
+				//console.log('Película agregada con éxito.');
 			}
 		} else {
 			const removeMovie = moviesFavorites.filter( (movie) => movie.id !== movieSelect.id);
